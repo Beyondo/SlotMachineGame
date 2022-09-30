@@ -52,7 +52,8 @@ project "SlotMachineGame"
 		postbuildcommands
 		{
 			"{COPY} 3rdparty/SFML/bin/sfml-audio-d-2.dll /",
-			"{COPY} 3rdparty/SFML/bin/sfml-audio-d-2.dll %{cfg.targetdir}"
+			"{COPY} 3rdparty/SFML/bin/sfml-audio-d-2.dll %{cfg.targetdir}",
+			"{COPY} 3rdparty/SFML/bin/sfml-system-d-2.dll %{cfg.targetdir}"
 		}
 
 	filter "configurations:Release"
@@ -66,7 +67,8 @@ project "SlotMachineGame"
 		postbuildcommands
 		{
 			"{COPY} 3rdparty/SFML/bin/sfml-audio-2.dll /",
-			"{COPY} 3rdparty/SFML/bin/sfml-audio-2.dll %{cfg.targetdir}"
+			"{COPY} 3rdparty/SFML/bin/sfml-audio-2.dll %{cfg.targetdir}",
+			"{COPY} 3rdparty/SFML/bin/sfml-system-2.dll %{cfg.targetdir}"
 		}
 	filter "configurations:Distribution"
 		defines "OCTAVIAN_DIST"
@@ -79,5 +81,6 @@ project "SlotMachineGame"
 		postbuildcommands
 		{
 			"{COPY} 3rdparty/SFML/bin/sfml-audio-2.dll /",
-			"{COPY} 3rdparty/SFML/bin/sfml-audio-2.dll %{cfg.targetdir}"
+			"{COPY} 3rdparty/SFML/bin/sfml-audio-2.dll %{cfg.targetdir}",
+			"{COPY} 3rdparty/SFML/bin/sfml-system-2.dll %{cfg.targetdir}"
 		}

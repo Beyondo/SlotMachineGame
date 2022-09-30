@@ -98,7 +98,8 @@
 IF EXIST 3rdparty\SFML\bin\openal32.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\openal32.dll \ &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\openal32.dll \ &gt; nul)
 IF EXIST 3rdparty\SFML\bin\openal32.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\openal32.dll ..\Out\Bin\Debug-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\openal32.dll ..\Out\Bin\Debug-windows-x86_64\SlotMachineGame &gt; nul)
 IF EXIST 3rdparty\SFML\bin\sfml-audio-d-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-audio-d-2.dll \ &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-audio-d-2.dll \ &gt; nul)
-IF EXIST 3rdparty\SFML\bin\sfml-audio-d-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-audio-d-2.dll ..\Out\Bin\Debug-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-audio-d-2.dll ..\Out\Bin\Debug-windows-x86_64\SlotMachineGame &gt; nul)</Command>
+IF EXIST 3rdparty\SFML\bin\sfml-audio-d-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-audio-d-2.dll ..\Out\Bin\Debug-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-audio-d-2.dll ..\Out\Bin\Debug-windows-x86_64\SlotMachineGame &gt; nul)
+IF EXIST 3rdparty\SFML\bin\sfml-system-d-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-system-d-2.dll ..\Out\Bin\Debug-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-system-d-2.dll ..\Out\Bin\Debug-windows-x86_64\SlotMachineGame &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,7 +129,8 @@ IF EXIST 3rdparty\SFML\bin\sfml-audio-d-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\
 IF EXIST 3rdparty\SFML\bin\openal32.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\openal32.dll \ &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\openal32.dll \ &gt; nul)
 IF EXIST 3rdparty\SFML\bin\openal32.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\openal32.dll ..\Out\Bin\Release-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\openal32.dll ..\Out\Bin\Release-windows-x86_64\SlotMachineGame &gt; nul)
 IF EXIST 3rdparty\SFML\bin\sfml-audio-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll \ &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll \ &gt; nul)
-IF EXIST 3rdparty\SFML\bin\sfml-audio-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll ..\Out\Bin\Release-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll ..\Out\Bin\Release-windows-x86_64\SlotMachineGame &gt; nul)</Command>
+IF EXIST 3rdparty\SFML\bin\sfml-audio-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll ..\Out\Bin\Release-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll ..\Out\Bin\Release-windows-x86_64\SlotMachineGame &gt; nul)
+IF EXIST 3rdparty\SFML\bin\sfml-system-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-system-2.dll ..\Out\Bin\Release-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-system-2.dll ..\Out\Bin\Release-windows-x86_64\SlotMachineGame &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distribution|x64'">
@@ -158,7 +160,8 @@ IF EXIST 3rdparty\SFML\bin\sfml-audio-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bi
 IF EXIST 3rdparty\SFML\bin\openal32.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\openal32.dll \ &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\openal32.dll \ &gt; nul)
 IF EXIST 3rdparty\SFML\bin\openal32.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\openal32.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\openal32.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul)
 IF EXIST 3rdparty\SFML\bin\sfml-audio-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll \ &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll \ &gt; nul)
-IF EXIST 3rdparty\SFML\bin\sfml-audio-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul)</Command>
+IF EXIST 3rdparty\SFML\bin\sfml-audio-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul)
+IF EXIST 3rdparty\SFML\bin\sfml-system-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-system-2.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-system-2.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
