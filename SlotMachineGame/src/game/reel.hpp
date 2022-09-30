@@ -39,6 +39,7 @@ namespace oct
 			for (const auto& [c, value] : cards)
 				if (c.id() == m_targetCard)
 					return c;
+			return cards.begin()->first;
 		}
 		void set_angular_velocity(float angularVelocity) { this->velocity.y = angularVelocity; }
 		auto seconds_since_stopped() const -> float { return static_cast<float>(glfwGetTime() - this->m_stop_time); }
@@ -137,7 +138,7 @@ namespace oct
 				if (num_matches > 1) ++score;
 				sound::play_sound(1 + (score * 0.1f));
 				this->color = glm::vec4(1.0f);
-				if (next == nullptr) sound::play_music("assets/sounds/win.wav", 1.0f, score * 50);
+				if (next == nullptr) sound::play_music("assets/sounds/win.wav", 1.0f, score * 50.0f);
 				m_stop_time = glfwGetTime();
 				std::cout << current_slot().name() << std::endl;
 			}

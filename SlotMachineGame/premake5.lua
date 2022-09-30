@@ -21,16 +21,14 @@ project "SlotMachineGame"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.stb}",
 		"%{IncludeDir.SFML}",
 	}
+	linkoptions { '/NODEFAULTLIB:"LIBCMT"' }
 	links
 	{
 		"GLFW",
 		"Glad",
-		"ImGui",
-		"3rdparty/SFML/lib/**.lib",
 		"opengl32.lib"
 	}
 	postbuildcommands
@@ -47,6 +45,10 @@ project "SlotMachineGame"
 		defines "OCTAVIAN_DEBUG"
 		runtime "Debug"
 		symbols "on"
+		links
+		{
+			"3rdparty/SFML/lib/sfml-audio-d.lib",
+		}
 		postbuildcommands
 		{
 			"{COPY} 3rdparty/SFML/bin/sfml-audio-d-2.dll /",
@@ -57,13 +59,25 @@ project "SlotMachineGame"
 		defines "OCTAVIAN_RELEASE"
 		runtime "Release"
 		optimize "on"
+		links
+		{
+			"3rdparty/SFML/lib/sfml-audio.lib",
+		}
 		postbuildcommands
 		{
 			"{COPY} 3rdparty/SFML/bin/sfml-audio-2.dll /",
 			"{COPY} 3rdparty/SFML/bin/sfml-audio-2.dll %{cfg.targetdir}"
 		}
-
 	filter "configurations:Distribution"
 		defines "OCTAVIAN_DIST"
 		runtime "Release"
 		optimize "on"
+		links
+		{
+			"3rdparty/SFML/lib/sfml-audio.lib",
+		}
+		postbuildcommands
+		{
+			"{COPY} 3rdparty/SFML/bin/sfml-audio-2.dll /",
+			"{COPY} 3rdparty/SFML/bin/sfml-audio-2.dll %{cfg.targetdir}"
+		}

@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>INITGUID;OCTAVIAN_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;3rdparty\Glad\include;3rdparty\glm;3rdparty\GLFW\include;3rdparty\ImGui;3rdparty\stb;3rdparty\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;3rdparty\Glad\include;3rdparty\glm;3rdparty\GLFW\include;3rdparty\stb;3rdparty\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -90,7 +90,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>3rdparty\SFML\lib\**.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;3rdparty\SFML\lib\sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/NODEFAULTLIB:"LIBCMT" %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>IF EXIST assets\ (xcopy /Q /E /Y /I assets ..\Out\Bin\Debug-windows-x86_64\SlotMachineGame\assets &gt; nul) ELSE (xcopy /Q /Y /I assets ..\Out\Bin\Debug-windows-x86_64\SlotMachineGame\assets &gt; nul)
@@ -105,7 +106,7 @@ IF EXIST 3rdparty\SFML\bin\sfml-audio-d-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>INITGUID;OCTAVIAN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;3rdparty\Glad\include;3rdparty\glm;3rdparty\GLFW\include;3rdparty\ImGui;3rdparty\stb;3rdparty\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;3rdparty\Glad\include;3rdparty\glm;3rdparty\GLFW\include;3rdparty\stb;3rdparty\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -119,7 +120,8 @@ IF EXIST 3rdparty\SFML\bin\sfml-audio-d-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>3rdparty\SFML\lib\**.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;3rdparty\SFML\lib\sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/NODEFAULTLIB:"LIBCMT" %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>IF EXIST assets\ (xcopy /Q /E /Y /I assets ..\Out\Bin\Release-windows-x86_64\SlotMachineGame\assets &gt; nul) ELSE (xcopy /Q /Y /I assets ..\Out\Bin\Release-windows-x86_64\SlotMachineGame\assets &gt; nul)
@@ -134,7 +136,7 @@ IF EXIST 3rdparty\SFML\bin\sfml-audio-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bi
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>INITGUID;OCTAVIAN_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;3rdparty\Glad\include;3rdparty\glm;3rdparty\GLFW\include;3rdparty\ImGui;3rdparty\stb;3rdparty\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;3rdparty\Glad\include;3rdparty\glm;3rdparty\GLFW\include;3rdparty\stb;3rdparty\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -148,12 +150,15 @@ IF EXIST 3rdparty\SFML\bin\sfml-audio-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bi
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>3rdparty\SFML\lib\**.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;3rdparty\SFML\lib\sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/NODEFAULTLIB:"LIBCMT" %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>IF EXIST assets\ (xcopy /Q /E /Y /I assets ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame\assets &gt; nul) ELSE (xcopy /Q /Y /I assets ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame\assets &gt; nul)
 IF EXIST 3rdparty\SFML\bin\openal32.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\openal32.dll \ &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\openal32.dll \ &gt; nul)
-IF EXIST 3rdparty\SFML\bin\openal32.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\openal32.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\openal32.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul)</Command>
+IF EXIST 3rdparty\SFML\bin\openal32.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\openal32.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\openal32.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul)
+IF EXIST 3rdparty\SFML\bin\sfml-audio-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll \ &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll \ &gt; nul)
+IF EXIST 3rdparty\SFML\bin\sfml-audio-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul) ELSE (xcopy /Q /Y /I 3rdparty\SFML\bin\sfml-audio-2.dll ..\Out\Bin\Distribution-windows-x86_64\SlotMachineGame &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -205,9 +210,6 @@ IF EXIST 3rdparty\SFML\bin\openal32.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\bin\op
     </ProjectReference>
     <ProjectReference Include="3rdparty\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdparty\imgui\ImGui.vcxproj">
-      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
