@@ -29,6 +29,11 @@ Out
 
 # Executables
 *.exe
-!Vendor/*.exe
 *.out
 *.app
+!Vendor/*.exe
+
+# Project files
+*.sln
+*.vcxproj
+*.filters
