@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="engine">
+      <UniqueIdentifier>{FBDB78FB-E77D-A3D1-D038-B725BC792A22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="engine\gfx">
+      <UniqueIdentifier>{0FEB4784-FBA2-89D1-64AA-622D508124C2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="engine\gfx\api">
+      <UniqueIdentifier>{D84B70ED-C419-64F3-ADAD-D419991A4058}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="engine\gfx\api\gl">
+      <UniqueIdentifier>{7AB20761-E6C8-05F7-2F40-91189B95D67E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="engine\gui">
+      <UniqueIdentifier>{EFEC4784-DBA4-89D1-44AC-622D308324C2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="engine\physx">
+      <UniqueIdentifier>{A6F392B6-9256-225B-3BDC-5A11271EEEDD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="engine\primitive">
+      <UniqueIdentifier>{43E2B144-2FDB-D096-580D-B61B4465B0A2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{9F35977C-8B6C-980D-3459-7E10206F140F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\button.hpp" />
+    <ClInclude Include="src\engine\assert.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\camera.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\engine.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\api\gl\gl_buffer.hpp">
+      <Filter>engine\gfx\api\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\api\gl\gl_context.hpp">
+      <Filter>engine\gfx\api\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\api\gl\gl_shader.hpp">
+      <Filter>engine\gfx\api\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\api\gl\gl_texture.hpp">
+      <Filter>engine\gfx\api\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\api\gl\gl_vertex_array.hpp">
+      <Filter>engine\gfx\api\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\api\opengl.h">
+      <Filter>engine\gfx\api</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\buffer.h">
+      <Filter>engine\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\context.h">
+      <Filter>engine\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\gfx.h">
+      <Filter>engine\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\object.h">
+      <Filter>engine\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\shader.h">
+      <Filter>engine\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\texture.h">
+      <Filter>engine\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\vertex.h">
+      <Filter>engine\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gfx\vertex_array.h">
+      <Filter>engine\gfx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\graphics.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\gui\button3d.h">
+      <Filter>engine\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\physics.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\physx\object.h">
+      <Filter>engine\physx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\physx\physx.h">
+      <Filter>engine\physx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\primitive\circle.h">
+      <Filter>engine\primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\primitive\quad.h">
+      <Filter>engine\primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\primitive\ring.h">
+      <Filter>engine\primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\renderer2d.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\sound.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\window.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\event.hpp" />
+    <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\game\card.hpp">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\reel.hpp">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\slot_machine.hpp">
+      <Filter>game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\slot_machine.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\engine\renderer2d.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\window.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\precompiled.cpp" />
+  </ItemGroup>
+</Project>
