@@ -30,5 +30,6 @@ Out
 
 # Executables
 *.exe
+!Vendor/*.exe
 *.out
 *.app
