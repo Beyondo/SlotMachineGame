@@ -27,7 +27,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\button.hpp" />
     <ClInclude Include="src\engine\assert.h">
       <Filter>engine</Filter>
     </ClInclude>
@@ -35,6 +34,9 @@
       <Filter>engine</Filter>
     </ClInclude>
     <ClInclude Include="src\engine\engine.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\event.hpp">
       <Filter>engine</Filter>
     </ClInclude>
     <ClInclude Include="src\engine\gfx\api\gl\gl_buffer.hpp">
@@ -82,7 +84,7 @@
     <ClInclude Include="src\engine\graphics.h">
       <Filter>engine</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\gui\button3d.h">
+    <ClInclude Include="src\engine\gui\button3d.hpp">
       <Filter>engine\gui</Filter>
     </ClInclude>
     <ClInclude Include="src\engine\physics.h">
@@ -112,7 +114,6 @@
     <ClInclude Include="src\engine\window.h">
       <Filter>engine</Filter>
     </ClInclude>
-    <ClInclude Include="src\event.hpp" />
     <ClInclude Include="src\game.h" />
     <ClInclude Include="src\game\card.hpp">
       <Filter>game</Filter>
