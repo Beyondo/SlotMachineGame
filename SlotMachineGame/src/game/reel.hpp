@@ -54,16 +54,19 @@ namespace oct
 			return (offsetValue - (floorf(offsetValue / width) * width)) + start;
 		}
 		//
+		using angle_deg = float;
+		std::map<card, angle_deg> cards;
 		uint32_t m_targetCard = NO_CARD;
+		//
 		double m_stop_time = 0;
 		float m_maxVelocity = 360.0f;
 		float m_targetAngle = 0.0f;
 		float m_currentAngle = 0.0f;
 		float m_speedMultiplier = 1.0f;
-		using angle_deg  = float;
-		std::map<card, angle_deg> cards;
+		//
 		reel* prev = nullptr;
 		reel* next = nullptr;
+		//
 		bool m_stop_issued = false;
 		bool m_should_stop_spinning = false;
 		template<typename Degrees>
@@ -77,7 +80,7 @@ namespace oct
 		{
 			glm::vec3 point = rotation_by_position;
 			glm::vec3 direction = this->position - point;
-			glm::vec3 r = rotation_by_position;
+			//glm::vec3 r = rotation_by_position;
 			rot = atan2(direction.z, direction.y) + (glm::pi<float>() / 2);
 		}
 		void draw()
