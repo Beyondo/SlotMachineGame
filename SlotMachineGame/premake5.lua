@@ -1,9 +1,9 @@
 project "SlotMachineGame"
-	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
 	staticruntime "off"
 	targetname "SlotMachine"
+	entrypoint "mainCRTStartup"
 
 	targetdir ("%{wks.location}/Out/Bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/Out/Obj/" .. outputdir .. "/%{prj.name}")
@@ -42,6 +42,7 @@ project "SlotMachineGame"
 
 	defines "INITGUID"
 	filter "configurations:Debug"
+		kind "ConsoleApp"
 		defines "OCTAVIAN_DEBUG"
 		runtime "Debug"
 		symbols "on"
@@ -57,6 +58,7 @@ project "SlotMachineGame"
 		}
 
 	filter "configurations:Release"
+		kind "ConsoleApp"
 		defines "OCTAVIAN_RELEASE"
 		runtime "Release"
 		optimize "on"
@@ -71,6 +73,7 @@ project "SlotMachineGame"
 			"{COPY} 3rdparty/SFML/bin/sfml-system-2.dll %{cfg.targetdir}"
 		}
 	filter "configurations:Distribution"
+		kind "WindowedApp"
 		defines "OCTAVIAN_DIST"
 		runtime "Release"
 		optimize "on"
