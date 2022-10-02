@@ -10,4 +10,6 @@ https://user-images.githubusercontent.com/58893646/193433560-ad65ae4d-2490-4769-
 From `Out\Bin\Distribution-windows-x86_64\SlotMachineGame`, open **`SlotMachine.exe`**.
 
 ----
-This repository is temporary.
+# Notes
+- Since C++17 was required, I couldn't use my library (C++20).
+- This repository is temporary.
