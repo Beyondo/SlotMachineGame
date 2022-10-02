@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <algorithm>
+#include <functional>
 namespace oct
 {
     class event
@@ -45,6 +46,10 @@ namespace oct
         constexpr inline auto count()const->size_t
         {
             return this->callbacks.size();
+        }
+        constexpr auto handlers() const-> const std::vector<event_callback<Event>>&
+        {
+            return this->callbacks;
         }
     private:
         std::vector<event_callback<Event>> callbacks;

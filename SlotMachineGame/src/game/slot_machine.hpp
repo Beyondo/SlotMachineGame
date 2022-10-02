@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <game/card.hpp>
 #include <game/reel.hpp>
+#include <game/switch_button.hpp>
 #include <chrono>
 namespace oct
 {
@@ -26,6 +27,9 @@ namespace oct
 				r.prev = &reels[i - 1];
 				if (i < 4) r.next = &reels[i + 1];
 			}
+			switchButton.position = glm::vec3(1152.0f / 1.4f, 768.0f / 8.0f, 0.0f);
+			switchButton.size = glm::vec3(128.0f, 64.0f, 0.0f);
+			switchButton.color = glm::vec4(0.4f, 0.4f, 0.4f, 1.0f);
 		}
 		void start()
 		{
@@ -75,8 +79,9 @@ namespace oct
 		}
 		reel reels[5];
 		float win_bias = 0; // 0 = 100% справедливый
+		switch_button switchButton;
 	private:
-		float m_startTime;
+		float m_startTime = 0;
 		static inline std::default_random_engine rng{};
 		virtual void on_draw() override
 		{
@@ -97,6 +102,8 @@ namespace oct
 			}
 			if (!is_stopped_or_stopping() && glfwGetTime() - m_startTime > 60.0f)
 				stop();
+
+			renderer2d::draw(&switchButton);
 		}
 	};
 }
