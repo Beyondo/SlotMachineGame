@@ -80,7 +80,6 @@ namespace oct
 		{
 			glm::vec3 point = rotation_by_position;
 			glm::vec3 direction = this->position - point;
-			//glm::vec3 r = rotation_by_position;
 			rot = atan2(direction.z, direction.y) + (glm::pi<float>() / 2);
 		}
 		void draw()
@@ -92,7 +91,7 @@ namespace oct
 				gameCard.size = glm::vec2(this->size.x, this->size.x);
 				gameCard.rotation = glm::vec3(1.0f, 0, 0);
 				set_position_on_reel(gameCard.position, angle - m_currentAngle);
-				//set_rotation_angle(card.rotation_angle, card.position); // Проще просто напечатать текстуру на 3D-колесе.
+				//set_rotation_angle(gameCard.rotation_angle, gameCard.position); // Проще просто напечатать текстуру на 3D-колесе.
 				renderer2d::draw(&gameCard);
 			}
 		}

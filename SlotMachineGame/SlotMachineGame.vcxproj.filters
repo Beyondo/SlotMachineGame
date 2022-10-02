@@ -84,7 +84,7 @@
     <ClInclude Include="src\engine\graphics.h">
       <Filter>engine</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\gui\button3d.hpp">
+    <ClInclude Include="src\game\switch_button.hpp">
       <Filter>engine\gui</Filter>
     </ClInclude>
     <ClInclude Include="src\engine\physics.h">

@@ -187,7 +187,7 @@ IF EXIST 3rdparty\SFML\bin\sfml-system-2.dll\ (xcopy /Q /E /Y /I 3rdparty\SFML\b
     <ClInclude Include="src\engine\gfx\vertex.h" />
     <ClInclude Include="src\engine\gfx\vertex_array.h" />
     <ClInclude Include="src\engine\graphics.h" />
-    <ClInclude Include="src\engine\gui\button3d.hpp" />
+    <ClInclude Include="src\game\switch_button.hpp" />
     <ClInclude Include="src\engine\physics.h" />
     <ClInclude Include="src\engine\physx\object.h" />
     <ClInclude Include="src\engine\physx\physx.h" />

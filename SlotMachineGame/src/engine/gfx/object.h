@@ -10,6 +10,8 @@ namespace oct
 	class gfx::object
 	{
 	public:
+		bool hidden = false;
+		bool ortho = false;
 		texture2d* texture = nullptr;
 		virtual ~object() = default;
 		constexpr auto VBO() const->gfx::vertex_buffer& { return *s_vbo; }

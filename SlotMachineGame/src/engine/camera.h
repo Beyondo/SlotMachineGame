@@ -43,7 +43,7 @@ namespace oct
 			lastX = xpos;
 			lastY = ypos;
 
-			float sensitivity = 0.1f;
+			float sensitivity = 1.0f;
 			xoffset *= sensitivity;
 			yoffset *= sensitivity;
 			camera::yaw += xoffset;
@@ -67,10 +67,28 @@ namespace oct
 		static inline float fov = 45.0f;
 		static inline float render_distance = 2.8f;
 		static inline bool editor_mode = false;
+		static inline void reset()
+		{
+			position = glm::vec3(0.0f, 0.0f, 3.0f);
+			front = glm::vec3(0.0f, 0.0f, -1.0f);
+			up = glm::vec3(0.0f, 1.0f, 0.0f);
+			yaw = -90.0f;
+			pitch = 0.0f;
+			fov = 45.0f;
+			render_distance = 2.8f;
+		}
+		static inline auto view_matrix()->glm::mat4
+		{
+			return glm::lookAt(camera::position, camera::position + camera::front, camera::up);
+		}
+		static inline auto projection_matrix(float aspectRatio) -> glm::mat4
+		{
+			return glm::perspective(glm::radians(camera::fov), aspectRatio, 0.1f, editor_mode ? 100.0f : render_distance);
+		}
 		static inline auto calculate_transform(float aspectRatio, glm::mat4 modelSpace) -> glm::mat4
 		{
 			glm::mat4 view = glm::lookAt(camera::position, camera::position + camera::front, camera::up);
-			glm::mat4 projection = glm::perspective(glm::radians(camera::fov), aspectRatio, 0.1f, editor_mode ? 100.0f : render_distance);
+			glm::mat4 projection = projection_matrix(aspectRatio);
 			return projection * view * modelSpace;
 		}
 	};

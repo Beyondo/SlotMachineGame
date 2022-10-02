@@ -29,13 +29,15 @@ namespace oct
 		static void begin_projection(glm::mat4 camera = glm::mat4(0));
 		static void draw_quad(const glm::vec2& position, const glm::vec2& size, const glm::vec4& color, const gfx::texture2d* texture = nullptr);
 		static void draw_quad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color, const gfx::texture2d* texture = nullptr);
-		static void draw_quad_rotated(const glm::vec3& position, const glm::vec2& size, const glm::vec3 rotationAxes, float rotationAngle, const glm::vec4& color, const gfx::texture2d* texture = nullptr);
+		static void draw_quad_rotated(
+			const glm::vec3& position, const glm::vec2& size, const glm::vec3 rotationAxes,
+			float rotationAngle, const glm::vec4& color, const gfx::texture2d* texture = nullptr, bool ortho = false);
 		static void draw_quad(const glm::mat4& transform, const glm::vec4& color, const gfx::texture2d* texture = nullptr);
 		static void draw(quad* Quad);
 		static void draw(ring* Ring);
 		/** Завершает проекцию 2d-сцены */
 		static void end_projection();
-		/** Flushes all draw commands */
+		/** Отображает все команды рисования */
 		static void flush();
 		static auto context()->gfx::context*;
 	private:

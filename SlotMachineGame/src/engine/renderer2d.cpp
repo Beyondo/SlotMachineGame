@@ -2,6 +2,7 @@
 #include <glad/glad.h>
 #include <engine/gfx/context.h>
 #include <engine/gfx/api/gl/gl_context.hpp>
+#include <GLFW/glfw3.h>
 using namespace glm;
 namespace oct
 {
@@ -23,21 +24,23 @@ namespace oct
 		renderer2d::draw_quad(transform, color, texture);
 	}
 	void renderer2d::draw_quad_rotated(const vec3& position, const vec2& size, const vec3 rotationAxes, float rotationAngle,
-		const vec4& color, const gfx::texture2d* texture)
+		const vec4& color, const gfx::texture2d* texture, bool ortho)
 	{
 		mat4 model = translate(mat4(1), position) * rotate(mat4(1), rotationAngle, rotationAxes) * scale(mat4(1), vec3(size, 1.0f));
-		mat4 transform = camera::calculate_transform(mainWindow->width() / mainWindow->height(), model);
+		mat4 transform = ortho ? glm::ortho(0.0f, mainWindow->width(), 0.0f, mainWindow->height(), 0.f, 1000.0f) * model:
+			camera::calculate_transform(mainWindow->width() / mainWindow->height(), model);
 		renderer2d::draw_quad(transform, color, texture);
 	}
 	void renderer2d::draw_quad(const mat4& transform, const vec4& color, const gfx::texture2d* texture)
 	{
 		quad::s_shader->bind();
+		quad::s_shader->set_float("u_time", static_cast<float>(glfwGetTime()));
+		quad::s_shader->set_mat4("u_transform", transform);
 		if (texture)
 		{
-			texture->bind();
 			quad::s_shader->set_bool("u_colorMode", false);
 			quad::s_shader->set_int("u_texID", 0);
-			quad::s_shader->set_mat4("u_transform", transform);
+			texture->bind();
 			renderer2d::flush();
 			texture->unbind();
 		}
@@ -45,14 +48,16 @@ namespace oct
 		{
 			quad::s_shader->set_bool("u_colorMode", true);
 			quad::s_shader->set_vec4("u_color", color);
-			quad::s_shader->set_mat4("u_transform", transform);
 			renderer2d::flush();
 		}
 	}
 	void renderer2d::draw(quad* Quad)
 	{
-		renderer2d::draw_quad_rotated(Quad->position, Quad->size, Quad->rotation ,Quad->rotation_angle, Quad->color, Quad->texture);
-		Quad->on_draw();
+		if (!Quad->hidden)
+		{
+			renderer2d::draw_quad_rotated(Quad->position, Quad->size, Quad->rotation, Quad->rotation_angle, Quad->color, Quad->texture, Quad->ortho);
+			Quad->on_draw();
+		}
 	}
 	void renderer2d::draw(ring* Ring)
 	{
